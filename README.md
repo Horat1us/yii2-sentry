@@ -5,7 +5,8 @@
 [![License](https://poser.pugx.org/horat1us/yii2-sentry/license)](https://packagist.org/packages/horat1us/yii2-sentry)
 
 This is fork of [notamedia/yii2-sentry](https://github.com/notamedia/yii2-sentry)
-with updated sentry library: using sentry/sentry package instead of old sentry/sdk:^3.0
+with updated [Sentry](https://packagist.org/packages/sentry/sentry)
+library: using [sentry/sentry:^4.10](https://github.com/getsentry/sentry-php) package instead of old sentry/sdk:^3.0
 
 ## Installation
 
