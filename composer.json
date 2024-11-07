@@ -10,7 +10,7 @@
   "require": {
     "php": "^7.4 | ^8.0",
     "yiisoft/yii2": "^2.0.51",
-    "sentry/sdk": "^3.0"
+    "sentry/sentry": "^4.10"
   },
   "require-dev": {
     "codeception/codeception": "^4.0",
