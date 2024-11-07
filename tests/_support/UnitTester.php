@@ -1,5 +1,4 @@
-<?php
-
+<?php // phpcs:ignoreFile
 
 /**
  * Inherited Methods

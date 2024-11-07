@@ -57,13 +57,22 @@ class SentryTargetTest extends Unit
         $client = $this->createMock(ClientInterface::class);
         $client->expects($this->once())
             ->method('captureEvent')
-            ->willReturnCallback(function (Event $event, ?EventHint $hint = null, ?Scope $scope = null) use ($logData, &$messageWasSent): ?EventId {
-                $messageWasSent = true;
-                $this->assertSame($logData['exception'], $hint->exception);
-                $this->assertSame($logData['message'], $event->getMessage());
+            ->willReturnCallback(
+                function (
+                    Event $event,
+                    ?EventHint $hint = null,
+                    ?Scope $scope = null
+                ) use (
+                    $logData,
+                    &$messageWasSent
+                ): ?EventId {
+                    $messageWasSent = true;
+                    $this->assertSame($logData['exception'], $hint->exception);
+                    $this->assertSame($logData['message'], $event->getMessage());
 
-                return EventId::generate();
-            });
+                    return EventId::generate();
+                }
+            );
 
         SentrySdk::getCurrentHub()->bindClient($client);
 
@@ -94,13 +103,22 @@ class SentryTargetTest extends Unit
 
         $client = $this->createMock(ClientInterface::class);
         $client->expects($this->once())
-               ->method('captureEvent')
-               ->willReturnCallback(function (Event $event, ?EventHint $hint = null, ?Scope $scope = null) use ($expectedMessageText, &$messageWasSent): ?EventId {
-                   $messageWasSent = true;
-                   $this->assertSame($expectedMessageText, $event->getMessage());
+            ->method('captureEvent')
+            ->willReturnCallback(
+                function (
+                    Event $event,
+                    ?EventHint $hint = null,
+                    ?Scope $scope = null
+                ) use (
+                    $expectedMessageText,
+                    &$messageWasSent
+                ): ?EventId {
+                    $messageWasSent = true;
+                    $this->assertSame($expectedMessageText, $event->getMessage());
 
-                   return EventId::generate();
-               });
+                    return EventId::generate();
+                }
+            );
 
         SentrySdk::getCurrentHub()->bindClient($client);
 
