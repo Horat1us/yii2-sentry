@@ -1,4 +1,5 @@
 <?php
+
 /**
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -40,7 +41,8 @@ class SentryTarget extends Target
      */
     public array $clientOptions = [];
     /**
-     * @var bool Write the context information. The default implementation will dump user information, system variables, etc.
+     * @var bool Write the context information
+     * The default implementation will dump user information, system variables, etc.
      */
     public bool $context = true;
     /**
@@ -113,7 +115,8 @@ class SentryTarget extends Target
                 if ($user && ($identity = $user->getIdentity(false))) {
                     $data['userData']['id'] = $identity->getId();
                 }
-            } catch (Throwable $e) {}
+            } catch (Throwable $e) {
+            }
 
             \Sentry\withScope(function (Scope $scope) use ($text, $level, $data) {
                 if (is_array($text)) {
