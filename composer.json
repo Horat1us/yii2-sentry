@@ -1,6 +1,6 @@
 {
-  "name": "notamedia/yii2-sentry",
-  "description": "Yii2 logger for Sentry",
+  "name": "horat1us/yii2-sentry",
+  "description": "Yii2 logger for Sentry (updated)",
   "keywords": [
     "sentry",
     "yii2"
@@ -8,8 +8,8 @@
   "type": "yii2-extension",
   "license": "MIT",
   "require": {
-    "php": "^7.2|^8.0",
-    "yiisoft/yii2": "^2.0",
+    "php": "^7.4 | ^8.0",
+    "yiisoft/yii2": "^2.0.51",
     "sentry/sdk": "^3.0"
   },
   "require-dev": {
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "notamedia\\sentry\\": "src"
+      "Horat1us\\Yii\\Sentry\\": "src"
     }
   },
   "extra": {
@@ -37,5 +37,11 @@
   "scripts": {
     "test": "codecept run",
     "e2e": "php tests/sentry-fill"
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": true,
+      "yiisoft/yii2-composer": true
+    }
   }
 }

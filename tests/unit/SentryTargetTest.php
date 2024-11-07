@@ -12,7 +12,7 @@ use Sentry\SentrySdk;
 use Sentry\State\Scope;
 use Codeception\Test\Unit;
 use Sentry\ClientInterface;
-use notamedia\sentry\SentryTarget;
+use Horat1us\Yii\Sentry\SentryTarget;
 
 /**
  * Unit-tests for SentryTarget

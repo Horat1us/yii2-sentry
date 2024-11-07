@@ -1,14 +1,16 @@
 # [Sentry](https://sentry.io) logger for Yii2
 
-[![Build Status](https://travis-ci.org/notamedia/yii2-sentry.svg)](https://travis-ci.org/notamedia/yii2-sentry)
-[![Latest Stable Version](https://poser.pugx.org/notamedia/yii2-sentry/v/stable)](https://packagist.org/packages/notamedia/yii2-sentry) 
-[![Total Downloads](https://poser.pugx.org/notamedia/yii2-sentry/downloads)](https://packagist.org/packages/notamedia/yii2-sentry) 
-[![License](https://poser.pugx.org/notamedia/yii2-sentry/license)](https://packagist.org/packages/notamedia/yii2-sentry)
+[![Latest Stable Version](https://poser.pugx.org/horat1us/yii2-sentry/v/stable)](https://packagist.org/packages/horat1us/yii2-sentry) 
+[![Total Downloads](https://poser.pugx.org/horat1us/yii2-sentry/downloads)](https://packagist.org/packages/horat1us/yii2-sentry) 
+[![License](https://poser.pugx.org/horat1us/yii2-sentry/license)](https://packagist.org/packages/horat1us/yii2-sentry)
+
+This is fork of [notamedia/yii2-sentry](https://github.com/notamedia/yii2-sentry)
+with updated sentry library: using sentry/sentry package instead of old sentry/sdk:^3.0
 
 ## Installation
 
 ```bash
-composer require notamedia/yii2-sentry
+composer require horat1us/yii2-sentry
 ```
 
 Add target class in the application config:
@@ -20,7 +22,7 @@ return [
 		    'traceLevel' => YII_DEBUG ? 3 : 0,
 		    'targets' => [
 			    [
-				    'class' => 'notamedia\sentry\SentryTarget',
+				    'class' => \Horat1us\Yii\Sentry\SentryTarget::class,
 				    'dsn' => 'http://2682ybvhbs347:235vvgy465346@sentry.io/1',
 				    'levels' => ['error', 'warning'],
 				    // Write the context information (the default is true):
