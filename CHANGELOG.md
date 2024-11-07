@@ -1,5 +1,9 @@
 # Change log
 
+## 2.0.0
+* PHP updated to 8.0
+* Update sentry/sentry to ^4.10
+
 ## 1.6.0-beta - 2020-10-22
 ### Changed
 * PHP updated to 7.2
