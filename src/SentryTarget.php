@@ -34,19 +34,19 @@ class SentryTarget extends Target
     /**
      * @var string Sentry client key.
      */
-    public $dsn;
+    public ?string $dsn = null;
     /**
      * @var array Options of the \Sentry.
      */
-    public $clientOptions = [];
+    public array $clientOptions = [];
     /**
      * @var bool Write the context information. The default implementation will dump user information, system variables, etc.
      */
-    public $context = true;
+    public bool $context = true;
     /**
      * @var callable Callback function that can modify extra's array
      */
-    public $extraCallback;
+    public ?\Closure $extraCallback = null;
 
     /**
      * @inheritDoc
