@@ -3,10 +3,13 @@
 [![Latest Stable Version](https://poser.pugx.org/horat1us/yii2-sentry/v/stable)](https://packagist.org/packages/horat1us/yii2-sentry) 
 [![Total Downloads](https://poser.pugx.org/horat1us/yii2-sentry/downloads)](https://packagist.org/packages/horat1us/yii2-sentry) 
 [![License](https://poser.pugx.org/horat1us/yii2-sentry/license)](https://packagist.org/packages/horat1us/yii2-sentry)
+[![PHP Tests](https://github.com/Horat1us/yii2-sentry/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/Horat1us/yii2-sentry/actions/workflows/php.yml)
 
 This is fork of [notamedia/yii2-sentry](https://github.com/notamedia/yii2-sentry)
 with updated [Sentry](https://packagist.org/packages/sentry/sentry)
 library: using [sentry/sentry:^4.10](https://github.com/getsentry/sentry-php) package instead of old sentry/sdk:^3.0
+
+Compatibility: tested on PHP 8.4, PHP 8.5
 
 ## Installation
 
