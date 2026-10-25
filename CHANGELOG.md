@@ -1,5 +1,9 @@
 # Change log
 
+## 2.1.0
+* PHP updated to 8.4 (tested on PHP 8.4 and 8.5)
+* Update yiisoft/yii2 to ^2.0.53
+
 ## 2.0.0
 * PHP updated to 8.0
 * Update sentry/sentry to ^4.10

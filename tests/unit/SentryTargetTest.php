@@ -11,6 +11,7 @@ use RuntimeException;
 use Sentry\SentrySdk;
 use Sentry\State\Scope;
 use Codeception\Test\Unit;
+use Codeception\Attribute\DataProvider;
 use Sentry\ClientInterface;
 use Horat1us\Yii\Sentry\SentryTarget;
 
@@ -34,7 +35,6 @@ class SentryTargetTest extends Unit
     {
         $class = new ReflectionClass(SentryTarget::className());
         $method = $class->getMethod('getContextMessage');
-        $method->setAccessible(true);
 
         $sentryTarget = new SentryTarget();
         $result = $method->invokeArgs($sentryTarget, []);
@@ -80,7 +80,7 @@ class SentryTargetTest extends Unit
         $this->assertTrue($messageWasSent);
     }
 
-    public function messageDataProvider()
+    public static function messageDataProvider()
     {
         $msg = 'A message';
 
@@ -93,9 +93,7 @@ class SentryTargetTest extends Unit
         yield [$msg, ['message' => $msg, 'msg' => 'Ignored']];
     }
 
-    /**
-     * @dataProvider messageDataProvider
-     */
+    #[DataProvider('messageDataProvider')]
     public function testMessageConverting($expectedMessageText, $loggedMessage)
     {
         $sentryTarget = $this->getConfiguredSentryTarget();
@@ -215,7 +213,6 @@ class SentryTargetTest extends Unit
     {
         $sentryTargetClass = new ReflectionClass("\Sentry\Client");
         $clientProperty = $sentryTargetClass->getProperty('transport');
-        $clientProperty->setAccessible(true);
 
         return $clientProperty;
     }
